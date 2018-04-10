@@ -58,10 +58,10 @@
 		67778027207C517200CAE5B2 /* tableViewTest */ = {
 			isa = PBXGroup;
 			children = (
-				67778028207C517200CAE5B2 /* AppDelegate.h */,
-				67778029207C517200CAE5B2 /* AppDelegate.m */,
-				6777802B207C517200CAE5B2 /* ViewController.h */,
-				6777802C207C517200CAE5B2 /* ViewController.m */,
+				67778040207C625600CAE5B2 /* Controller */,
+				6777803E207C623A00CAE5B2 /* Model */,
+				6777803F207C624D00CAE5B2 /* View */,
+				67778042207C628F00CAE5B2 /* Other */,
 				6777802E207C517200CAE5B2 /* Main.storyboard */,
 				67778031207C517C00CAE5B2 /* Assets.xcassets */,
 				67778033207C517C00CAE5B2 /* LaunchScreen.storyboard */,
@@ -69,6 +69,38 @@
 				67778037207C517C00CAE5B2 /* main.m */,
 			);
 			path = tableViewTest;
+			sourceTree = "<group>";
+		};
+		6777803E207C623A00CAE5B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6777803F207C624D00CAE5B2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		67778040207C625600CAE5B2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6777802B207C517200CAE5B2 /* ViewController.h */,
+				6777802C207C517200CAE5B2 /* ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		67778042207C628F00CAE5B2 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				67778028207C517200CAE5B2 /* AppDelegate.h */,
+				67778029207C517200CAE5B2 /* AppDelegate.m */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
