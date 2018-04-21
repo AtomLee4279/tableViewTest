@@ -49,7 +49,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
 {
-    return 3;
+    return self.herosArray.count;
 }
 
 //每一行显示怎样的数据
@@ -58,17 +58,20 @@
 //indexPath.row:获取对应的行号 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"%@",[NSString stringWithFormat:@"第%ld组，第%ld行",(long)indexPath.section,(long)indexPath.row]);
     //创建一个cell
     UITableViewCell* cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:nil];
 //    设置数据
-    cell.textLabel.text = [NSString stringWithFormat:@"第%ld组，第%ld行",(long)indexPath.section,(long)indexPath.row];
-
+    HeroModel * hero = self.herosArray[indexPath.section][indexPath.row];
+    cell.textLabel.text = hero.name;
+    cell.detailTextLabel.text = hero.info;
+    cell.imageView.image = [UIImage imageNamed:hero.icon];
     return cell;
 }
 
 - (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [self.herosArray[section] valueForKeyPath:@"name"];
+    return [self.herosArray[section] valueForKeyPath:@"heroModel.name"];
 }
 
 
@@ -78,14 +81,17 @@
 {
     if (_herosArray==nil) {
         NSString* path = [[NSBundle mainBundle] pathForResource:@"TableViewData.plist" ofType:nil];
-        NSArray *dictArray = [NSArray arrayWithContentsOfFile:path];
+        NSArray *arrayArray = [NSArray arrayWithContentsOfFile:path];
+        NSMutableArray *tempArrayGroup = [NSMutableArray array];
         NSMutableArray *tempArray = [NSMutableArray array];
-        for (NSDictionary* dict in dictArray) {
-            HeroModel *hero = [HeroModel heroWithDict:dict];
-            [tempArray addObject:hero];
-            
+        for (NSArray* array in arrayArray) {
+            for (NSDictionary*dict in array) {
+                HeroModel *hero = [HeroModel heroWithDict:dict];
+                [tempArray addObject:hero];
+            }
+            tempArrayGroup = tempArray;
         }
-        _herosArray = tempArray;
+        _herosArray = tempArrayGroup;
     }
     return _herosArray;
 }

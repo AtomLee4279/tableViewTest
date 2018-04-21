@@ -15,6 +15,7 @@
 		67778035207C517C00CAE5B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67778033207C517C00CAE5B2 /* LaunchScreen.storyboard */; };
 		67778038207C517C00CAE5B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 67778037207C517C00CAE5B2 /* main.m */; };
 		67B113E2208B13A200D08DF6 /* HeroModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B113E1208B13A200D08DF6 /* HeroModel.m */; };
+		67B113E5208B2B2E00D08DF6 /* HeroGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B113E4208B2B2E00D08DF6 /* HeroGroup.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		67778036207C517C00CAE5B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		67778037207C517C00CAE5B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		67B113E1208B13A200D08DF6 /* HeroModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeroModel.m; sourceTree = "<group>"; };
+		67B113E3208B2B2E00D08DF6 /* HeroGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HeroGroup.h; sourceTree = "<group>"; };
+		67B113E4208B2B2E00D08DF6 /* HeroGroup.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeroGroup.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,8 @@
 			children = (
 				67484E82208AC68500910193 /* HeroModel.h */,
 				67B113E1208B13A200D08DF6 /* HeroModel.m */,
+				67B113E3208B2B2E00D08DF6 /* HeroGroup.h */,
+				67B113E4208B2B2E00D08DF6 /* HeroGroup.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 			files = (
 				67B113E2208B13A200D08DF6 /* HeroModel.m in Sources */,
 				6777802D207C517200CAE5B2 /* ViewController.m in Sources */,
+				67B113E5208B2B2E00D08DF6 /* HeroGroup.m in Sources */,
 				67778038207C517C00CAE5B2 /* main.m in Sources */,
 				6777802A207C517200CAE5B2 /* AppDelegate.m in Sources */,
 			);
