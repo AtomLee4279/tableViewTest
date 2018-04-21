@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "HeroModel.h"
+#import "HeroGroup.h"
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property(nonatomic,strong) NSArray *herosArray;
@@ -81,12 +82,13 @@
 {
     if (_herosArray==nil) {
         NSString* path = [[NSBundle mainBundle] pathForResource:@"TableViewData.plist" ofType:nil];
-        NSArray *arrayArray = [NSArray arrayWithContentsOfFile:path];
+        NSArray *array = [NSArray arrayWithContentsOfFile:path];
         NSMutableArray *tempArrayGroup = [NSMutableArray array];
         NSMutableArray *tempArray = [NSMutableArray array];
-        for (NSArray* array in arrayArray) {
+        for (NSDictionary* dict in array) {
             for (NSDictionary*dict in array) {
-                HeroModel *hero = [HeroModel heroWithDict:dict];
+//                HeroModel *hero = [HeroModel heroWithDict:dict];
+                HeroGroup *heroGroup = [HeroGroup heroGroupWithDict:dict];
                 [tempArray addObject:hero];
             }
             tempArrayGroup = tempArray;

@@ -11,5 +11,15 @@
 
 
 @implementation HeroGroup
-
+-(instancetype)initWithDict:(NSDictionary*)dict
+{
+    if (self = [super init]) {
+        [self setValuesForKeysWithDictionary:dict];
+    }
+    return self;
+}
++(instancetype)heroGroupWithDict:(NSDictionary*)dict
+{
+    return [[self alloc] initWithDict: dict];
+}
 @end

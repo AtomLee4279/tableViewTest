@@ -11,4 +11,6 @@
 @interface HeroGroup : NSObject
 @property(nonatomic,strong)NSString* groupName;
 @property(nonatomic,strong)HeroModel* heroModel;
+-(instancetype)initWithDict:(NSDictionary*)dict;
++(instancetype)heroGroupWithDict:(NSDictionary*)dict;
 @end
