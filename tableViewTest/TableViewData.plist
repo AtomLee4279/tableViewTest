@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>info</key>
+		<string>疾风剑豪info</string>
+		<key>icon</key>
+		<string>浮标.png</string>
+		<key>name</key>
+		<string>疾风剑豪</string>
+	</dict>
+	<dict>
+		<key>info</key>
+		<string>熊宝宝info</string>
+		<key>icon</key>
+		<string>kc1.png</string>
+		<key>name</key>
+		<string>熊宝宝</string>
+	</dict>
+	<dict>
+		<key>info</key>
+		<string>小萝莉info</string>
+		<key>icon</key>
+		<string>kl_checkbox.png</string>
+		<key>name</key>
+		<string>小萝莉</string>
+	</dict>
+</array>
+</plist>

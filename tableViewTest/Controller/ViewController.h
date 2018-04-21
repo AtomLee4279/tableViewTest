@@ -10,6 +10,8 @@
 
 @interface ViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
-
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 @end
+
 
