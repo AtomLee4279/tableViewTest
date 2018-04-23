@@ -83,17 +83,12 @@
     if (_herosArray==nil) {
         NSString* path = [[NSBundle mainBundle] pathForResource:@"TableViewData.plist" ofType:nil];
         NSArray *array = [NSArray arrayWithContentsOfFile:path];
-        NSMutableArray *tempArrayGroup = [NSMutableArray array];
         NSMutableArray *tempArray = [NSMutableArray array];
         for (NSDictionary* dict in array) {
-            for (NSDictionary*dict in array) {
-//                HeroModel *hero = [HeroModel heroWithDict:dict];
-                HeroGroup *heroGroup = [HeroGroup heroGroupWithDict:dict];
-                [tempArray addObject:hero];
-            }
-            tempArrayGroup = tempArray;
+            HeroGroup *heroGroup = [HeroGroup heroGroupWithDict:dict];
+            [tempArray addObject:heroGroup];
         }
-        _herosArray = tempArrayGroup;
+        _herosArray = tempArray;
     }
     return _herosArray;
 }

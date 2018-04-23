@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 @class HeroModel;
 @interface HeroGroup : NSObject
-@property(nonatomic,strong)NSString* groupName;
-@property(nonatomic,strong)HeroModel* heroModel;
+@property(nonatomic,strong)NSString* GroupTitle;
+@property(nonatomic,copy)NSArray* heroArray;
 -(instancetype)initWithDict:(NSDictionary*)dict;
 +(instancetype)heroGroupWithDict:(NSDictionary*)dict;
 @end
