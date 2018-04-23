@@ -65,9 +65,9 @@
 //    设置数据
     NSLog(@"%ld==%ld",(long)indexPath.section,(long)indexPath.row);
     HeroGroup * group = self.heroGroups[indexPath.section];
-    cell.textLabel.text = [group getHeroParamWithIndex:indexPath.row andkey:0];
-    cell.detailTextLabel.text = [group getHeroParamWithIndex:indexPath.row andkey:1];
-    cell.imageView.image = [UIImage imageNamed:[group getHeroParamWithIndex:indexPath.row andkey:2]];
+    cell.textLabel.text = [group getHeroParamWithIndex:indexPath.row andkey:@"name"];
+    cell.detailTextLabel.text = [group getHeroParamWithIndex:indexPath.row andkey:@"info"];
+    cell.imageView.image = [UIImage imageNamed:[group getHeroParamWithIndex:indexPath.row andkey:@"icon"]];
     return cell;
 }
 

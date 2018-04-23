@@ -13,5 +13,5 @@
 @property(nonatomic,copy)NSArray* heroArray;
 -(instancetype)initWithDict:(NSDictionary*)dict;
 +(instancetype)heroGroupWithDict:(NSDictionary*)dict;
--(NSString*)getHeroParamWithIndex:(NSUInteger)index andkey:(int)key;
+-(NSString*)getHeroParamWithIndex:(NSUInteger)index andkey:(NSString*)key;
 @end
