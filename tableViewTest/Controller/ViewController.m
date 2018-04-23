@@ -11,7 +11,7 @@
 #import "HeroGroup.h"
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property(nonatomic,strong) NSArray *herosArray;
+@property(nonatomic,strong) NSArray *heroGroups;
 @end
 
 @implementation ViewController
@@ -50,7 +50,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;
 {
-    return self.herosArray.count;
+    return self.heroGroups.count;
 }
 
 //每一行显示怎样的数据
@@ -63,33 +63,34 @@
     //创建一个cell
     UITableViewCell* cell = [[UITableViewCell alloc]initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:nil];
 //    设置数据
-    HeroModel * hero = self.herosArray[indexPath.section][indexPath.row];
-    cell.textLabel.text = hero.name;
-    cell.detailTextLabel.text = hero.info;
-    cell.imageView.image = [UIImage imageNamed:hero.icon];
+    NSLog(@"%ld==%ld",(long)indexPath.section,(long)indexPath.row);
+    HeroGroup * group = self.heroGroups[indexPath.section];
+    cell.textLabel.text = [group getHeroParamWithIndex:indexPath.row andkey:0];
+    cell.detailTextLabel.text = [group getHeroParamWithIndex:indexPath.row andkey:1];
+    cell.imageView.image = [UIImage imageNamed:[group getHeroParamWithIndex:indexPath.row andkey:2]];
     return cell;
 }
 
 - (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return [self.herosArray[section] valueForKeyPath:@"heroModel.name"];
+    return [self.heroGroups[section] valueForKeyPath:@"GroupTitle"];
 }
 
 
 #pragma getter&&setter
 //懒加载
--(NSArray*)herosArray
+-(NSArray*)heroGroups
 {
-    if (_herosArray==nil) {
+    if (_heroGroups==nil) {
         NSString* path = [[NSBundle mainBundle] pathForResource:@"TableViewData.plist" ofType:nil];
         NSArray *array = [NSArray arrayWithContentsOfFile:path];
         NSMutableArray *tempArray = [NSMutableArray array];
         for (NSDictionary* dict in array) {
-            HeroGroup *heroGroup = [HeroGroup heroGroupWithDict:dict];
-            [tempArray addObject:heroGroup];
+            HeroGroup *heroGroups = [HeroGroup heroGroupWithDict:dict];
+            [tempArray addObject:heroGroups];
         }
-        _herosArray = tempArray;
+        _heroGroups = tempArray;
     }
-    return _herosArray;
+    return _heroGroups;
 }
 @end
